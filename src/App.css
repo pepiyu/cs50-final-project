@@ -1,0 +1,90 @@
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vw;
+}
+
+@media (min-aspect-ratio: 16 / 9) {
+  .video-player iframe, .video-player video {
+      height: 86.25vw !important;
+  }
+
+}
+
+.desktop {
+  position: absolute;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  
+}
+.navbar {
+  position: fixed;
+  margin: 1rem;
+  top: 0;
+  left: 0;
+  width: 8rem;
+  height: 80vh;
+  z-index: 1;
+}
+
+.navbar-icon {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.timer {
+  position: fixed;
+  left: 8rem;
+  top: 20rem;
+  margin: 5rem;
+  width: 20rem;
+  height: 10rem;
+
+}
+
+
+.video-player iframe, .video-player video {
+  position: fixed;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
