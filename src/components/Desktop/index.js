@@ -1,11 +1,13 @@
 import Navbar from '../Navbar';
 import Timer from '../Timer';
+import ToDoList from '../ToDoList';
 
-const Desktop = () => {
+const Desktop = ({setReproduction, mute, setMute}) => {
     return (
         <div className="desktop">
-            <Navbar/>
+            <Navbar setReproduction={setReproduction} mute={mute} setMute={setMute}/>
             <Timer/>
+            <ToDoList/>
 
         </div>
     );

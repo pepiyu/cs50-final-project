@@ -1,21 +1,25 @@
+import { useState, useEffect } from 'react';
 
-const Workspace = () => {
+const Workspace = ({reproduction, mute}) => {
 
-    const youtube = '9aJsVTBDeyA'
-
-    const src = `https://www.youtube.com/embed/${youtube}?start=11&amp;autoplay=1&amp;mute=0&amp;controls=0&amp;start=10&amp;origin=https%3A%2F%2Flifeat.io&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=0&amp;enablejsapi=1&amp;widgetid=3`
-
+    const [ytSrc, setYtSrc] = useState('')
+    
+    useEffect(() => {
+    
+        const isMute = mute ? '1' : '0';
+        const src = `https://www.youtube.com/embed/${reproduction.id}?start=11&autoplay=1&mute=${isMute}&controls=0&start=10&origin=https%3A%2F%2Flifeat.io&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=0&enablejsapi=1&widgetid=3`
+        setYtSrc(src)
+    }, [ytSrc, mute])
     return (
         <div className="video-player" style={{width: "100vw", height: "100vh", position: "absolute"}}>
             <div style={{width: "100%", height: "100%"}}>
-                <iframe frameborder="0" 
-                allowfullscreen="1" 
+                <iframe frameBorder="0" 
+                allowFullScreen="1" 
                 allow="accelerometer; autoplay; 
                 clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                title="Las Cataratas del Niagara en 4K - Vistas Increíbles y Música Relajante" 
                 width="100%" 
                 height="100%" 
-                src={src} id="widget4"></iframe>
+                src={ytSrc} id="widget4"></iframe>
             </div>
         </div>
 
