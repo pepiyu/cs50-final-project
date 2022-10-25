@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-const Timer = () => {
+import { FaMinus } from 'react-icons/fa'
+
+const Timer = ({timerVisible, setTimerVisible }) => {
 
     const [counter, setCounter] = useState(1200)
     const [minutes, setMinutes] = useState(0)
@@ -18,21 +20,27 @@ const Timer = () => {
         return n < 10 ? '0' + n : n;
     }
 
+    const handleMinus = () => {
+        setTimerVisible(!timerVisible);
+    }
+
     
     return (
-        <div className="timer box">
+        <div className="timer box" style={{display: timerVisible === true ? 'flex' : 'none'}}>
+            <div className="box-title">
+                <h2>Timer</h2>
+                <FaMinus onClick={handleMinus}/>
+            </div>
             <div className="timer-content">
-                <div className="timer-title">
-                    <h2>Timer</h2>
-                </div>
                 <div className="timer-body">
                     <span className="timer-countdown">{twoDigits(minutes)}:{twoDigits(seconds)}</span>
                 </div>
-                <button onClick={() => setCountdown(!countdown)} 
-                style={countdown ? 
-                {backgroundColor: '#fff', color: '#000'} : 
-                {backgroundColor: '#000', color: '#fff'}}>{countdown ? 'Stop' : 'Start'}</button>
             </div>
+            <button onClick={() => setCountdown(!countdown)} 
+                style={countdown ? 
+                {backgroundColor: '#fff', color: '#525252'} : 
+                {backgroundColor: '#525252', color: '#fff'}}>{countdown ? 'Pause' : 'Start'}
+            </button>
         </div>
     )
 }
