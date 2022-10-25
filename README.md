@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# STUDY WITH ME
+#### Video Demo:  <URL HERE>
+#### Description:
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
