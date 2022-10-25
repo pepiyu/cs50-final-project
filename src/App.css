@@ -1,25 +1,39 @@
+html {
+  color: #525252;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  font-size: 1.1rem;
   margin: 0
 }
 
 button {
   background-color: #fff;
   border-radius: 1rem;
-  border: 2px solid #000;
+  border: 2px solid #525252;
   padding: 0.5rem 1rem;
-  margin: 1rem 0rem;
   cursor: pointer;
 }
 
 input {
   border-radius: 1rem;
-  border: 2px solid #000;
+  border: 2px solid #525252;
   padding: 0.5rem 1rem;
+}
+
+/* When the checkbox is checked, add a blue background */
+.list-item input:checked ~ {
+  background-color: #000;
 }
 
 li {
   list-style: none;
   margin: 0;
+  padding: 2px;
+  justify-content: space-between;
+  display: flex;
 }
 
 ul {
@@ -29,10 +43,6 @@ ul {
 
 .fullscreen {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vh;
-  height: 100vw;
 }
 
 @media (min-aspect-ratio: 16 / 9) {
@@ -45,7 +55,6 @@ ul {
 .desktop {
   position: absolute;
   display: flex;
-  border: 1px solid #000;
   width: 100vw;
   margin: 0;
   padding: 1rem;
@@ -53,9 +62,11 @@ ul {
 }
 
 .box {
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 1rem 1.3rem;
   gap: 1rem;
   margin: 1rem;
   
@@ -64,21 +75,31 @@ ul {
   position: relative;
   top: 0;
   left: 0;
-  width: 8rem;
+  width: 4rem;
   min-height: 80vh;
   z-index: 1;
   text-align: center;
-  gap: 2rem;
 }
+
+.navbar-title {
+  padding: 0.7rem;
+}
+
+.navbar-text {
+
+  line-height: 10px;
+  font-size: 0.75rem
+}
+
 
 .navbar-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 0.5rem;
 }
 
 .navbar-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .navbar-item {
@@ -86,10 +107,21 @@ ul {
   cursor: pointer;
 }
 
+hr.divisor {
+  border-top: 1px solid #525252;
+  width: 50%;
+}
+
 .timer {
   position: relative;
   width: 20rem;
   height: 10rem;
+
+}
+
+.timer-body {
+  display: flex;
+  align-items: center;
 
 }
 
@@ -100,20 +132,30 @@ ul {
 .todo-list {
   position: relative;
   width: 20rem;
-  height: 10rem;
+  min-height: 10rem;
   margin-left: auto;
   margin-right: 3rem;
 }
 
-.todo-list-title {
+.box-title {
+  display: flex;
+  justify-content: space-between;
+  grid-area: 1;
+}
+
+
+.todo-list-content {
+  min-height: 4rem;
+}
+
+.list-item {
   display: block;
 }
 
-.todo-list-content {
-  height: 80%;
+.todo-list-end {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 
 
