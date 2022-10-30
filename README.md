@@ -1,7 +1,10 @@
 # STUDY WITH ME
-#### Video Demo:  <URL HERE>
+#### Video Demo: https://youtu.be/6Q1_CY5k1Qs
 #### Description:
 
+Study with me is my final project for the Harvard CS50 Introduction to Computer Science course.
+
+Study with me is a web app that emules a desktop with Youtube videos on the back and a timer and to-do-list as tools for students while studying alone. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
